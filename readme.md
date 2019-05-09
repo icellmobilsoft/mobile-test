@@ -17,14 +17,16 @@ Ne gondold és ne told túl! Nem akarjuk, hogy az egész napod erre szánd.
 
 ... vagy lepj meg minket. 
 
-----
+---
 
 Ezeket fogjuk nézni első sorban:
 * Fordul-e az app :)
+* _Androidon_: legalább 3 screen
+* Képernyőméretek figyelembe vétele
 * Meglévő nyílt forrású libek használata
-* Unit tesztek és/vagy UI tesztek
-* Clean kód és projekt felépítés, architektúra
+* Clean kód és projekt felépítés, architektúra, esztétika
 * Plusz pont a dependency injection-ért
+* Plusz pont a Unit tesztekért és/vagy UI tesztekért
 
 ## Beadás
 
