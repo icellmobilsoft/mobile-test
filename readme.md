@@ -20,6 +20,7 @@ Ne gondold és ne told túl! Nem akarjuk, hogy az egész napod erre szánd.
 ----
 
 Ezeket fogjuk nézni első sorban:
+* Fordul-e az app :)
 * Meglévő nyílt forrású libek használata
 * Unit tesztek és/vagy UI tesztek
 * Clean kód és projekt felépítés, architektúra
