@@ -1,6 +1,6 @@
 # Mobil fejlesztői teszt
 
-**Swift-ben vagy Java-ban írd meg!**
+**Swift-ben vagy Kotlin-ban írd meg!**
 
 Arra vagyunk kíváncsiak, hogy milyen szép kódot írsz!  
 Készíts egy alkalmazást, ami egy nyílt API adatait tölti le és jeleníti meg egy rendezett módon.  
