@@ -18,25 +18,6 @@ object HttpApiClient {
             .client(client)
             .build()
 
-        //api = retrofit.create(Api::class.java)
-
-        return retrofit;
-    }
-
-    /*fun getClient(): Retrofit {
-
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-        val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
-
-
-        retrofit = Retrofit.Builder()
-            .baseUrl(Config.SERVER_BASE)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(client)
-            .build()
-
-
         return retrofit
-    }*/
+    }
 }

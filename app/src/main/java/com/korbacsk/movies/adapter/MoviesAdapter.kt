@@ -6,8 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.TransformationUtils.fitCenter
 import com.korbacsk.movies.R
 import com.korbacsk.movies.config.Config
 import com.korbacsk.movies.model.MovieModel
@@ -32,9 +30,9 @@ class MoviesAdapter(
     }
 
     fun setMovies(movies: List<MovieModel>) {
-        this.movies.clear();
-        this.movies.addAll(movies);
-        notifyDataSetChanged();
+        this.movies.clear()
+        this.movies.addAll(movies)
+        notifyDataSetChanged()
     }
 
     fun appendMovies(movies: List<MovieModel>) {
@@ -46,8 +44,6 @@ class MoviesAdapter(
         notifyDataSetChanged()
     }
 
-
-
     inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val poster: ImageView = itemView.findViewById(R.id.ImageViewPoster)
@@ -55,7 +51,9 @@ class MoviesAdapter(
         fun bind(movie: MovieModel) {
             Glide.with(itemView)
                 .load(
-                    Config.MOVIE_API_IMAGE_URL+""+movie.posterPath)
+                    Config.MOVIE_API_IMAGE_URL_POSTER + "" + movie.posterPath
+                )
+                .diskCacheStrategy(Config.GLIDE_DISK_CACHE_STRATEGY)
                 .centerCrop()
                 .into(poster)
 

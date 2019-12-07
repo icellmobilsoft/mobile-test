@@ -5,9 +5,10 @@ import com.korbacsk.movies.httpapi.MovieApiInterface
 
 object ServiceLocator {
     fun getMovieApi(): MovieApiInterface {
-        val httpApiInterface:MovieApiInterface = HttpApiClient.getMovieClient().create(MovieApiInterface::class.java);
+        val httpApiInterface: MovieApiInterface =
+            HttpApiClient.getMovieClient().create(MovieApiInterface::class.java)
 
-        return httpApiInterface;
+        return httpApiInterface
     }
 
 }
