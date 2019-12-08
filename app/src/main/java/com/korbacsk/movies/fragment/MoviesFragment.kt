@@ -76,18 +76,19 @@ class MoviesFragment : Fragment() {
                 .get(MoviesViewModel::class.java)
 
             moviesObserver = Observer<List<MovieModel>> { movies ->
-                moviesAdapter?.appendMovies(movies)
+                if (moviesPage == 1) {
+                    moviesAdapter?.setMovies(movies)
+                } else {
+                    moviesAdapter?.appendMovies(movies)
+                }
+                moviesPage = moviesPage + 1
+
                 setMoviesOnScrollListener()
 
                 if (swipeRefreshLayoutMovies.isRefreshing()) {
                     swipeRefreshLayoutMovies.setRefreshing(false)
                 }
 
-                if (moviesPage == 1) {
-                    moviesAdapter?.setMovies(movies)
-                }
-
-                moviesPage = moviesPage + 1
             }
 
             moviesViewModel!!.getMovies().observe(this, moviesObserver!!)
@@ -118,6 +119,8 @@ class MoviesFragment : Fragment() {
         if (moviesAdapter == null) {
             moviesAdapter =
                 MoviesAdapter(mutableListOf()) { movie -> addMovieDetailsFragment(movie) }
+        } else {
+            setMoviesOnScrollListener()
         }
 
         recyclerViewMovies.adapter = moviesAdapter
@@ -148,7 +151,6 @@ class MoviesFragment : Fragment() {
 
                 if (firstVisibleItem + visibleItemCount >= totalItemCount / 2) {
                     recyclerViewMovies.removeOnScrollListener(this)
-                    moviesPage = moviesPage + 1
                     loadMovies()
                 }
             }
