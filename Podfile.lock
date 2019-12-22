@@ -1,0 +1,94 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Differentiator (3.1.0)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Moya/RxSwift (13.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - Nimble (8.0.4)
+  - Quick (2.2.0)
+  - Result (4.1.0)
+  - RxBlocking (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.5.0)
+  - RxSwiftExt (3.4.0):
+    - RxSwiftExt/Core (= 3.4.0)
+    - RxSwiftExt/RxCocoa (= 3.4.0)
+  - RxSwiftExt/Core (3.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwiftExt/RxCocoa (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwiftExt/Core
+  - RxSwiftUtilities (2.1.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxTest (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - SwiftLint (0.38.0)
+  - Swinject (2.6.2)
+  - SwinjectStoryboard (2.2.0):
+    - Swinject (~> 2.6)
+
+DEPENDENCIES:
+  - Moya/RxSwift
+  - Nimble
+  - Quick
+  - RxBlocking
+  - RxCocoa
+  - RxDataSources
+  - RxSwift
+  - RxSwiftExt
+  - RxSwiftUtilities
+  - RxTest
+  - SwiftLint
+  - Swinject (= 2.6.2)
+  - SwinjectStoryboard (= 2.2.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Differentiator
+    - Moya
+    - Nimble
+    - Quick
+    - Result
+    - RxBlocking
+    - RxCocoa
+    - RxDataSources
+    - RxSwift
+    - RxSwiftExt
+    - RxSwiftUtilities
+    - RxTest
+    - SwiftLint
+    - Swinject
+    - SwinjectStoryboard
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
+  RxSwiftUtilities: b486df7454cc867c3ea626ce24110511159e7044
+  RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
+  SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
+  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
+
+PODFILE CHECKSUM: feaf0d7aa6c62f88d7c5963d43d4c5941e4ad948
+
+COCOAPODS: 1.8.4
