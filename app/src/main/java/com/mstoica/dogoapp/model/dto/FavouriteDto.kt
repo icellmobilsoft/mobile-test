@@ -1,6 +1,7 @@
-package com.mstoica.dogoapp.model
+package com.mstoica.dogoapp.model.dto
 
 import com.google.gson.annotations.SerializedName
+import com.mstoica.dogoapp.model.structure.BaseDto
 
 data class FavouriteDto(
 

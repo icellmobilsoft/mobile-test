@@ -1,6 +1,7 @@
-package com.mstoica.dogoapp.model
+package com.mstoica.dogoapp.model.dto
 
 import com.google.gson.annotations.SerializedName
+import com.mstoica.dogoapp.model.structure.BaseDto
 
 data class BreedDto (
 
@@ -12,6 +13,9 @@ data class BreedDto (
 
     @SerializedName("temperament")
     val temperament: String,
+
+    @SerializedName("description")
+    val description: String?,
 
     @SerializedName("life_span")
     val lifeSpan: String,
@@ -26,12 +30,18 @@ data class BreedDto (
     val origin: String?,
 
     @SerializedName("weight")
-    val weight: Any?,
+    val weight: DimensionDto?,
 
     @SerializedName("country_code")
     val countryCode: String?,
 
     @SerializedName("height")
-    val height: Any?
+    val height: DimensionDto?,
+
+    @SerializedName("reference_image_id")
+    val referenceImageId: String?,
+
+    @SerializedName("image")
+    val imageMeta: ImageMetaDto
 
 ): BaseDto

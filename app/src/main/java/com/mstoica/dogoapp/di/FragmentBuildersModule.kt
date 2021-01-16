@@ -1,9 +1,6 @@
 package com.mstoica.dogoapp.di
 
-import com.mstoica.dogoapp.FragmentFavourites
-import com.mstoica.dogoapp.FragmentSearch
-import com.mstoica.dogoapp.FragmentWelcomeHome
-import com.mstoica.dogoapp.databinding.FragmentSearchBinding
+import com.mstoica.dogoapp.view.*
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -11,12 +8,18 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeFavouritesFragment(): FragmentFavourites
+    abstract fun contributeHomeFragment(): FragmentHome
 
     @ContributesAndroidInjector
     abstract fun contributeWelcomeHomeFragment(): FragmentWelcomeHome
 
     @ContributesAndroidInjector
+    abstract fun contributeFavouritesFragment(): FragmentFavourites
+
+    @ContributesAndroidInjector
     abstract fun contributeSearchFragment(): FragmentSearch
+
+    @ContributesAndroidInjector
+    abstract fun contributeInfoFragment(): FragmentInfo
 
 }

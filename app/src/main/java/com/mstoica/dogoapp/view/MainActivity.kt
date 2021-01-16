@@ -1,4 +1,4 @@
-package com.mstoica.dogoapp
+package com.mstoica.dogoapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +7,12 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.mstoica.dogoapp.R
 import com.mstoica.dogoapp.databinding.ActivityMainBinding
+import com.mstoica.dogoapp.di.Injectable
+import dagger.android.support.DaggerAppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 

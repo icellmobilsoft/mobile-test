@@ -1,4 +1,4 @@
-package com.mstoica.dogoapp
+package com.mstoica.dogoapp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mstoica.dogoapp.commons.handleClearFocusOnTouchOutside
 import com.mstoica.dogoapp.databinding.FragmentSearchBinding
+import com.mstoica.dogoapp.di.Injectable
 
-class FragmentSearch: Fragment() {
+class FragmentSearch: Fragment(), Injectable {
 
     private var _binding: FragmentSearchBinding? = null
 

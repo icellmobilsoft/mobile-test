@@ -1,6 +1,6 @@
 package com.mstoica.dogoapp.di
 
-import com.mstoica.dogoapp.MainActivity
+import com.mstoica.dogoapp.view.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

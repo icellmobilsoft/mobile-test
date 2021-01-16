@@ -6,6 +6,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.mstoica.dogoapp.network.DogApi
 import com.mstoica.dogoapp.network.NetworkOptions
+import com.mstoica.dogoapp.network.SessionManager
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -52,4 +53,7 @@ class AppModule {
 
     @Provides
     fun provideDogApi(retrofit: Retrofit) = retrofit.create(DogApi::class.java)
+
+    @Provides
+    fun provideSessionManager(context: Context) = SessionManager.getInstance(context)
 }

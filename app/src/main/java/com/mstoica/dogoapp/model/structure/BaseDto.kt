@@ -1,4 +1,4 @@
-package com.mstoica.dogoapp.model
+package com.mstoica.dogoapp.model.structure
 
 import java.io.Serializable
 

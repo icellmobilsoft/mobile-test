@@ -5,17 +5,17 @@
 
     <fragment
         android:id="@+id/app_bar_home"
-        android:name="com.mstoica.dogoapp.FragmentHome"
+        android:name="com.mstoica.dogoapp.view.FragmentHome"
         android:label="FragmentHome" />
 
     <fragment
         android:id="@+id/app_bar_search"
-        android:name="com.mstoica.dogoapp.FragmentSearch"
+        android:name="com.mstoica.dogoapp.view.FragmentSearch"
         android:label="SearchFragment" />
 
     <fragment
         android:id="@+id/app_bar_info"
-        android:name="com.mstoica.dogoapp.InfoFragment"
+        android:name="com.mstoica.dogoapp.view.FragmentInfo"
         android:label="InfoFragment" />
 
 </navigation>

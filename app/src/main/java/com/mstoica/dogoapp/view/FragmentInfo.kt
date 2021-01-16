@@ -1,12 +1,14 @@
-package com.mstoica.dogoapp
+package com.mstoica.dogoapp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.mstoica.dogoapp.R
+import com.mstoica.dogoapp.di.Injectable
 
-class InfoFragment: Fragment() {
+class FragmentInfo: Fragment(), Injectable {
 
     override fun onCreateView(
         inflater: LayoutInflater,

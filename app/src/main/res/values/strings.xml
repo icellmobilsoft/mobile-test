@@ -4,13 +4,21 @@
     <string name="action_home">Home</string>
     <string name="action_search">Search</string>
     <string name="welcome_label">Welcome!</string>
+    <string name="search_for_breed_hint">Search for breed…</string>
+    <string name="favourites_label">Favourites</string>
+    <string name="next_dogo">Next dogo</string>
+    <string name="no_information">No information</string>
+    <string name="field_error_text">---</string>
+    <string name="user_name">User%s</string>
+    <string name="liked">liked</string>
+    <string name="unliked">unliked</string>
+    <string name="general_error_message">Something went wrong!</string>
+    <string name="general_error_message_suggestion">Something went wrong! Please check network connection.</string>
 
     <!-- Content descriptions -->
     <string name="cd_favourites">favourites</string>
     <string name="cd_dog_info_image">dog_info_image</string>
     <string name="cd_like">like_button</string>
-    <string name="search_for_breed_hint">Search for breed...</string>
     <string name="cd_back_navigation">back_navigation</string>
-    <string name="favourites_label">Favourites</string>
-    <string name="next_dogo">Next dogo</string>
+
 </resources>
