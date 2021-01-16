@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/fragmentWelcomeHome">
+
+    <fragment
+        android:id="@+id/fragmentWelcomeHome"
+        android:name="com.mstoica.dogoapp.FragmentWelcomeHome"
+        android:label="FragmentWelcomeHome">
+        <action
+            android:id="@+id/action_fragmentWelcomeHome_to_fragmentFavourites"
+            app:destination="@id/fragmentFavourites"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentFavourites"
+        android:name="com.mstoica.dogoapp.FragmentFavourites"
+        android:label="FragmentFavourites" />
+
+</navigation>

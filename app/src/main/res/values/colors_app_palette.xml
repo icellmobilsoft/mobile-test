@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DBB624</color>
+    <color name="colorPrimaryVariant">#DB8C24</color>
+    <color name="colorOnPrimary">#ffffff</color>
+
+    <color name="colorSecondary">#743510</color>
+    <color name="colorSecondaryVariant">#B4540B</color>
+    <color name="colorOnSecondary">#ffffff</color>
+
+    <color name="colorError">@color/materialRed700</color>
+    <color name="colorSuccess">@color/materialGreen500</color>
+    <color name="colorOnError">#ffffff</color>
+    <color name="colorSurface">#ffffff</color>
+    <color name="colorOnSuccess">#ffffff</color>
+    <color name="colorBackground">#ffffff</color>
+
+    <color name="primaryTextColor">@color/materialGrey800</color>
+    <color name="defaultTextColor">@color/materialGrey700</color>
+    <color name="secondaryTextColor">@color/materialGrey600</color>
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/app_bar_home">
+
+    <fragment
+        android:id="@+id/app_bar_home"
+        android:name="com.mstoica.dogoapp.FragmentHome"
+        android:label="FragmentHome" />
+
+    <fragment
+        android:id="@+id/app_bar_search"
+        android:name="com.mstoica.dogoapp.FragmentSearch"
+        android:label="SearchFragment" />
+
+    <fragment
+        android:id="@+id/app_bar_info"
+        android:name="com.mstoica.dogoapp.InfoFragment"
+        android:label="InfoFragment" />
+
+</navigation>

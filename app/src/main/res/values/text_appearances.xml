@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.LabelPrimary" parent="android:TextAppearance.Large">
+        <item name="android:fontFamily">@font/noto_sans_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Subhead" parent="android:TextAppearance.Material.Subhead">
+        <item name="android:fontFamily">@font/noto_sans_medium</item>
+    </style>
+
+    <style name="TextAppearance.Body1" parent="android:TextAppearance.Material.Body1">
+        <item name="android:fontFamily">@font/noto_sans</item>
+    </style>
+
+    <style name="TextAppearance.Body2" parent="android:TextAppearance.Material.Body2">
+        <item name="android:fontFamily">@font/noto_sans</item>
+    </style>
+
+    <style name="TextAppearance.Body3" parent="android:TextAppearance.Material.Caption">
+        <item name="android:fontFamily">@font/noto_sans</item>
+    </style>
+
+    <style name="TextAppearance.Caption" parent="android:TextAppearance.Material.Caption">
+        <item name="android:fontFamily">@font/noto_sans_light</item>
+    </style>
+
+    <style name="TextAppearance.Dialog.Title" parent="android:TextAppearance.Material.DialogWindowTitle">
+        <item name="android:fontFamily">@font/noto_sans_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TextAppearance.Toolbar.Title" parent="android:TextAppearance.Material.Widget.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/noto_sans_medium</item>
+    </style>
+
+</resources>

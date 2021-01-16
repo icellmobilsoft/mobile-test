@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- material color palette -->
+
+    <color name="materialGrey100">#F5F5F5</color>
+    <color name="materialGrey200">#EEEEEE</color>
+    <color name="materialGrey300">#E0E0E0</color>
+    <color name="materialGrey400">#BDBDBD</color>
+    <color name="materialGrey500">#9E9E9E</color>
+    <color name="materialGrey600">#757575</color>
+    <color name="materialGrey700">#616161</color>
+    <color name="materialGrey800">#424242</color>
+    <color name="materialGrey900">#212121</color>
+
+    <color name="materialGreen100">#C8E6C9</color>
+    <color name="materialGreen200">#A5D6A7</color>
+    <color name="materialGreen300">#81C784</color>
+    <color name="materialGreen400">#66BB6A</color>
+    <color name="materialGreen500">#4CAF50</color>
+    <color name="materialGreen600">#43A047</color>
+    <color name="materialGreen700">#388E3C</color>
+    <color name="materialGreen800">#2E7D32</color>
+    <color name="materialGreen900">#1B5E20</color>
+
+    <color name="materialRed100">#ffcdd2</color>
+    <color name="materialRed200">#ef9a9a</color>
+    <color name="materialRed300">#e57373</color>
+    <color name="materialRed400">#ef5350</color>
+    <color name="materialRed500">#f44336</color>
+    <color name="materialRed600">#e53935</color>
+    <color name="materialRed700">#d32f2f</color>
+    <color name="materialRed800">#c62828</color>
+    <color name="materialRed900">#b71c1c</color>
+
+    <color name="materialBlue50">#E3F2FD</color>
+    <color name="materialBlue100">#BBDEFB</color>
+    <color name="materialBlue200">#90CAF9</color>
+    <color name="materialBlue300">#64B5F6</color>
+    <color name="materialBlue400">#42A5F5</color>
+    <color name="materialBlue500">#2196F3</color>
+    <color name="materialBlue600">#1E88E5</color>
+    <color name="materialBlue700">#1976D2</color>
+    <color name="materialBlue800">#1565C0</color>
+    <color name="materialBlue900">#0D47A1</color>
+    <color name="inkBlue">#00235c</color>
+
+    <color name="materialOrange50">#FFF3E0</color>
+    <color name="materialOrange100">#FFE0B2</color>
+    <color name="materialOrange200">#FFCC80</color>
+    <color name="materialOrange300">#FFB74D</color>
+    <color name="materialOrange400">#FFA726</color>
+    <color name="materialOrange500">#FF9800</color>
+    <color name="materialOrange600">#FB8C00</color>
+    <color name="materialOrange700">#F57C00</color>
+    <color name="materialOrange800">#EF6C00</color>
+    <color name="materialOrange900">#E65100</color>
+
+    <color name="materialYellow50">#FFFDE7</color>
+    <color name="materialYellow100">#FFF9C4</color>
+    <color name="materialYellow200">#FFF59D</color>
+    <color name="materialYellow300">#FFF176</color>
+    <color name="materialYellow400">#FFEE58</color>
+    <color name="materialYellow500">#FFEB3B</color>
+    <color name="materialYellow600">#FDD835</color>
+    <color name="materialYellow700">#FBC02D</color>
+    <color name="materialYellow800">#F9A825</color>
+    <color name="materialYellow900">#F57F17</color>
+
+</resources>
