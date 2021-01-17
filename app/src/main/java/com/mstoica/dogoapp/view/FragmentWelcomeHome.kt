@@ -8,6 +8,7 @@ import android.view.View.*
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -18,12 +19,12 @@ import com.mstoica.dogoapp.databinding.FragmentWelcomeHomeBinding
 import com.mstoica.dogoapp.di.DaggerViewModelFactory
 import com.mstoica.dogoapp.di.Injectable
 import com.mstoica.dogoapp.model.domain.Dog
-import com.mstoica.dogoapp.model.dto.ImageSearchDto
+import com.mstoica.dogoapp.network.ImageOptions
 import com.mstoica.dogoapp.network.NetworkResource
 import com.mstoica.dogoapp.network.SessionManager
+import com.mstoica.dogoapp.viewmodel.FavouritesViewModel
 import com.mstoica.dogoapp.viewmodel.HomeViewModel
 import org.jetbrains.anko.support.v4.longToast
-import org.jetbrains.anko.support.v4.toast
 import javax.inject.Inject
 
 
@@ -35,8 +36,12 @@ class FragmentWelcomeHome: Fragment(), Injectable {
     @Inject
     lateinit var sessionManager: SessionManager
 
-    private val viewModel: HomeViewModel by lazy {
+    private val homeViewModel: HomeViewModel by lazy {
         ViewModelProvider(requireActivity(), providerFactory).get(HomeViewModel::class.java)
+    }
+
+    private val favouritesViewModel: FavouritesViewModel by lazy {
+        ViewModelProvider(requireActivity(), providerFactory).get(FavouritesViewModel::class.java)
     }
 
     private var _binding: FragmentWelcomeHomeBinding? = null
@@ -60,6 +65,7 @@ class FragmentWelcomeHome: Fragment(), Injectable {
 
         initUI()
         setupActionButtons()
+        homeViewModel.update()
         subscribeObservers()
     }
 
@@ -68,7 +74,7 @@ class FragmentWelcomeHome: Fragment(), Injectable {
     }
 
     private fun subscribeObservers() {
-        viewModel.randomDogLiveData.observe(viewLifecycleOwner, Observer {
+        homeViewModel.randomDogLiveData.observe(viewLifecycleOwner, Observer {
             with(binding) {
                 when (it.status) {
                     NetworkResource.ResourceStatus.ERROR -> {
@@ -96,14 +102,33 @@ class FragmentWelcomeHome: Fragment(), Injectable {
             }
         })
 
-        viewModel.likeChangedLiveData.observe(viewLifecycleOwner, Observer { liked ->
-            val resource = if(liked == true) R.drawable.ic_heart_filled else R.drawable.ic_heart_outline
-            val colorRes = if(liked == true) R.color.materialRed700 else R.color.materialGrey800
-            val tint = ContextCompat.getColor(requireContext(), colorRes)
+        favouritesViewModel.likeModificationLiveData.observe(viewLifecycleOwner, Observer { currentState ->
+            if (currentState != null) {
+                val refDog = currentState.first
+                val likeModState = currentState.second
+                val currentDog = homeViewModel.currentDog!!
 
-            binding.card.ivLike.setImageResource(resource)
-            binding.card.ivLike.imageTintList = ColorStateList.valueOf(tint)
+                if (currentDog == refDog) {
+                    when (likeModState) {
+                        FavouritesViewModel.LikeState.LIKED -> updateLikeButtonState(true)
+                        FavouritesViewModel.LikeState.UNLIKED -> updateLikeButtonState(false)
+                        FavouritesViewModel.LikeState.ERROR ->
+                            longToast(getString(R.string.general_error_message_suggestion))
+                    }
+                } else {
+                    updateLikeButtonState(currentDog.liked)
+                }
+            }
         })
+    }
+
+    private fun updateLikeButtonState(liked: Boolean) {
+        val resource = if(liked) R.drawable.ic_heart_filled else R.drawable.ic_heart_outline
+        val colorRes = if(liked) R.color.materialRed700 else R.color.materialGrey800
+        val tint = ContextCompat.getColor(requireContext(), colorRes)
+
+        binding.card.ivLike.setImageResource(resource)
+        binding.card.ivLike.imageTintList = ColorStateList.valueOf(tint)
     }
 
     private fun setupInfoCard(responseData: Dog?) = with(binding.card) {
@@ -117,8 +142,10 @@ class FragmentWelcomeHome: Fragment(), Injectable {
 
         Glide.with(this@FragmentWelcomeHome)
             .load(responseData?.imageUrl)
-            .apply(imageRequestOptions)
+            .apply(imageRequestOptions.override(ImageOptions.MED_IMAGE_SIZE))
             .into(ivDog)
+
+        updateLikeButtonState(homeViewModel.currentDog?.liked == true)
     }
 
     private fun setupActionButtons() {
@@ -129,11 +156,13 @@ class FragmentWelcomeHome: Fragment(), Injectable {
         )
 
         binding.card.ivLike.setOnClickListener {
-            viewModel.onLikePressed()
+            val currentDog = homeViewModel.currentDog!!
+            val currentLike = currentDog.favId != null
+            favouritesViewModel.modifyLike(currentDog, currentLike.not())
         }
 
         binding.btnNext.setOnClickListener {
-            viewModel.getNewRandomDog()
+            homeViewModel.getNewRandomDog()
         }
     }
 }

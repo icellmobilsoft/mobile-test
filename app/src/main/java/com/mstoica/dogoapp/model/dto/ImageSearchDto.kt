@@ -8,7 +8,7 @@ data class ImageSearchDto(
     override val id: String,
 
     @SerializedName("breeds")
-    val breeds: List<BreedDto>,
+    val breeds: List<BreedDto>?,
 
     @SerializedName("width")
     val width: Int,
@@ -25,4 +25,10 @@ enum class ImageSize(val queryParamText: String) {
     MEDIUM("med"),
     SMALL("small"),
     THUMBNAIL("thumb");
+}
+
+enum class ImageOrder(val queryParamText: String) {
+    RANDOM("RANDOM"),
+    ASC("ASC"),
+    DESC("DESC");
 }

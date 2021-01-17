@@ -14,12 +14,12 @@ class NetworkResource<T> (
             return NetworkResource(ResourceStatus.SUCCESS, data)
         }
 
-        fun <T> error(message: String? = null): NetworkResource<T> {
-            return NetworkResource(ResourceStatus.ERROR, null, message)
+        fun <T> error(message: String? = null, data: T? = null): NetworkResource<T> {
+            return NetworkResource(ResourceStatus.ERROR, data, message)
         }
 
-        fun <T> loading(): NetworkResource<T> {
-            return NetworkResource(ResourceStatus.LOADING, null)
+        fun <T> loading(data: T? = null): NetworkResource<T> {
+            return NetworkResource(ResourceStatus.LOADING, data)
         }
     }
 }

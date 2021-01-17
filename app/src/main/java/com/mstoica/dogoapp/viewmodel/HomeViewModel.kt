@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.mstoica.dogoapp.model.domain.Dog
 import com.mstoica.dogoapp.model.dto.ImageSearchDto
+import com.mstoica.dogoapp.network.NetworkOptions
 import com.mstoica.dogoapp.network.NetworkResource
 import com.mstoica.dogoapp.network.SessionManager
 import com.mstoica.dogoapp.repository.DogRepository
@@ -29,12 +30,7 @@ class HomeViewModel @Inject constructor(
     val randomDogLiveData: LiveData<NetworkResource<Dog>>
         get() = _randomDogLiveData
 
-    private val _likeChangedLiveData: MutableLiveData<Boolean?> = MutableLiveData(null)
-
-    val likeChangedLiveData: LiveData<Boolean?>
-        get() = _likeChangedLiveData
-
-    private val currentDog: Dog?
+    val currentDog: Dog?
         get() = randomDogLiveData.value?.data
 
     init {
@@ -42,11 +38,11 @@ class HomeViewModel @Inject constructor(
     }
 
     fun getNewRandomDog() = viewModelScope.launch(Dispatchers.IO) {
-        _likeChangedLiveData.postValue(null)
         _randomDogLiveData.postValue(NetworkResource.loading())
 
         val result = try {
             val dog = dogRepo.getRandomDog()
+            dog.favId = getFavourites().find { dog.imageId == it.imageId }?.id
             NetworkResource.success(dog)
         } catch (ex: Exception) {
             Log.e(logTag, ex.message, ex)
@@ -55,37 +51,18 @@ class HomeViewModel @Inject constructor(
         _randomDogLiveData.postValue(result)
     }
 
-    fun onLikePressed() = viewModelScope.launch {
-        check(currentDog != null) {
-            "Invalid data!"
-        }
-
-        if (currentDog!!.favId != null) {
-            deleteFromFavourites(currentDog!!.favId!!)
-        } else {
-            makeFavourite(currentDog!!.imageId)
+    fun update() = viewModelScope.launch(Dispatchers.IO) {
+        if (currentDog != null) {
+            currentDog!!.favId = getFavourites().find { currentDog!!.imageId == it.imageId }?.id
+            _randomDogLiveData.postValue(_randomDogLiveData.value)
         }
     }
 
-    private suspend fun makeFavourite(imageId: String) {
-        try {
-            val simpleResponse = favRepo.makeFavourite(imageId = imageId, userName = sessionManager.userName)
-            currentDog!!.favId = simpleResponse.id
-            _likeChangedLiveData.postValue(true)
-        } catch(ex: Exception) {
-            Log.e(logTag, ex.message, ex)
-        }
-    }
-
-    private suspend fun deleteFromFavourites(id: String) {
-        try {
-            favRepo.deleteFavourite(id)
-            currentDog!!.favId = null
-            _likeChangedLiveData.postValue(false)
-        } catch(ex: Exception) {
-            Log.e(logTag, ex.message, ex)
-        }
-    }
+    private suspend fun getFavourites() = favRepo.getFavourites(
+        userName = sessionManager.userName,
+        limit = NetworkOptions.PAGE_LIMIT,
+        page = 0
+    )
 
     companion object {
         val logTag = HomeViewModel::class.java.simpleName

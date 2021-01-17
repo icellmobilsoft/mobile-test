@@ -20,6 +20,20 @@
     <fragment
         android:id="@+id/fragmentFavourites"
         android:name="com.mstoica.dogoapp.view.FragmentFavourites"
-        android:label="FragmentFavourites" />
+        android:label="FragmentFavourites" >
+        <action
+            android:id="@+id/action_fragmentFavourites_to_dogDialogFragment"
+            app:destination="@id/dogDialogFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/dogDialogFragment"
+        android:name="com.mstoica.dogoapp.view.dialog.DogDialogFragment"
+        android:label="DogDialogFragment" >
+
+        <argument
+            android:name="dog"
+            app:argType="com.mstoica.dogoapp.model.domain.Dog" />
+    </dialog>
 
 </navigation>

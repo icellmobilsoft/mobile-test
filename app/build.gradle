@@ -54,6 +54,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:${versions.refreshLayout}"
 
     //3rd Party dependencies
     implementation "com.facebook.shimmer:shimmer:${versions.shimmer}"

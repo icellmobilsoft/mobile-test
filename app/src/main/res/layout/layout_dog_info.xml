@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
-    app:cardElevation="2dp"
-    xmlns:tools="http://schemas.android.com/tools">
+    app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,15 +13,15 @@
 
         <ImageView
             android:id="@+id/iv_dog"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="w,1:1"
+            android:background="@color/materialGrey100"
+            android:contentDescription="@string/cd_dog_info_image"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/materialGrey100"
-            tools:src="@color/materialGrey100"
-            android:contentDescription="@string/cd_dog_info_image" />
+            tools:src="@color/materialGrey100" />
 
         <TextView
             android:id="@+id/tv_dog_breed"
@@ -44,8 +44,8 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="16dp"
             android:textAppearance="@style/TextAppearance.Caption"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:textColor="@color/secondaryTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tv_dog_breed"
             app:layout_constraintStart_toStartOf="@+id/tv_dog_breed"
             app:layout_constraintTop_toBottomOf="@+id/tv_dog_breed"
@@ -62,10 +62,10 @@
             android:focusable="true"
             android:padding="8dp"
             android:src="@drawable/ic_heart_outline"
-            app:tint="@color/materialGrey800"
             app:layout_constraintBottom_toBottomOf="@+id/tv_dog_info"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_dog_breed" />
+            app:layout_constraintTop_toTopOf="@+id/tv_dog_breed"
+            app:tint="@color/materialGrey800" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

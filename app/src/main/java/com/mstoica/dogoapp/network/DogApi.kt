@@ -7,39 +7,47 @@ import retrofit2.http.*
 
 interface DogApi {
 
-    @GET("breeds")
-    suspend fun getBreeds(): List<BreedDto>
+    @GET("images/search")
+    suspend fun search(
+        @Query("limit")
+        limit: Int,
+
+        @Query("page")
+        page: Int,
+
+        @Query("size")
+        size: String = ImageSize.MEDIUM.queryParamText,
+
+        @Query("order")
+        order: String = ImageOrder.RANDOM.queryParamText,
+    ): List<ImageSearchDto>
 
     @GET("favourites")
     suspend fun getFavourites(
-        @Header("x-api-key") apiKey: String
-    ): List<FavouriteDto>
-
-    @GET("images/search")
-    suspend fun searchImage(
-        @Header("x-api-key")
-        apiKey: String,
+        @Query("sub_id")
+        userName: String,
 
         @Query("limit")
         limit: Int,
 
-        @Query("size")
-        size: String = ImageSize.MEDIUM.queryParamText,
-    ): List<ImageSearchDto>
+        @Query("page")
+        page: Int,
+    ): List<FavouriteDto>
+
+    @GET("images/{image_id}")
+    suspend fun getImage(
+        @Path("image_id")
+        imageId: String,
+    ): ImageSearchDto
 
     @DELETE("favourites/{id}")
     suspend fun deleteFavourite(
-        @Header("x-api-key")
-        apiKey: String,
-
         @Path("id")
         favouriteId: String
     ): ResponseBody
 
     @POST("favourites")
     suspend fun makeFavourite(
-        @Header("x-api-key")
-        apiKey: String,
         @Body
         body: MakeFavouriteRequestDto
     ): SimpleResponseDto

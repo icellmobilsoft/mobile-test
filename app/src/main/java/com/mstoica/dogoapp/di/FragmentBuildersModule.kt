@@ -19,7 +19,4 @@ abstract class FragmentBuildersModule {
     @ContributesAndroidInjector
     abstract fun contributeSearchFragment(): FragmentSearch
 
-    @ContributesAndroidInjector
-    abstract fun contributeInfoFragment(): FragmentInfo
-
 }

@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.mstoica.dogoapp.network.AppCustomInterceptor
 import com.mstoica.dogoapp.network.DogApi
 import com.mstoica.dogoapp.network.NetworkOptions
 import com.mstoica.dogoapp.network.SessionManager
@@ -34,6 +35,7 @@ class AppModule {
         loggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor(loggingInterceptor)
+        .addInterceptor(AppCustomInterceptor())
         .build()
 
     @Singleton

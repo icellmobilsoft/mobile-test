@@ -11,11 +11,25 @@
     <fragment
         android:id="@+id/app_bar_search"
         android:name="com.mstoica.dogoapp.view.FragmentSearch"
-        android:label="SearchFragment" />
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_app_bar_search_to_dogDialogFragment"
+            app:destination="@id/dogDialogFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/app_bar_info"
         android:name="com.mstoica.dogoapp.view.FragmentInfo"
         android:label="InfoFragment" />
+
+    <dialog
+        android:id="@+id/dogDialogFragment"
+        android:name="com.mstoica.dogoapp.view.dialog.DogDialogFragment"
+        android:label="DogDialogFragment" >
+
+        <argument
+            android:name="dog"
+            app:argType="com.mstoica.dogoapp.model.domain.Dog" />
+    </dialog>
 
 </navigation>
