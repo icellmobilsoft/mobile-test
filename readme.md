@@ -4,6 +4,7 @@
 
 Arra vagyunk kíváncsiak, hogy milyen szép kódot írsz!  
 Készíts egy alkalmazást, ami egy nyílt API adatait tölti le és jeleníti meg egy rendezett módon.  
+Gondolj arra, hogy ez egy production alkalmazás, tartsd szem előtt a továbbfejleszthetőséget.
 
 A legfrissebb **stable** Android Studio-t vagy Xcode-ot használd.   
 Beta szoftverrel készült projektet nem fogadunk el.
