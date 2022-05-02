@@ -22,7 +22,7 @@ Beta szoftverrel készült projektet nem fogadunk el.
 
 ---
 
-Ezeket fogjuk nézni első sorban:
+Elsősorban ezeket fogjuk nézni:
 * Fordul-e az app :)
 * Legalább 3 screen
 * Képernyőméretek figyelembe vétele
