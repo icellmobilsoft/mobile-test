@@ -1,4 +1,4 @@
-# Mobil fejlesztői teszt
+# Mobil - Fejlesztői teszt
 
 **Swift-ben vagy Kotlin-ban írd meg!**
 
