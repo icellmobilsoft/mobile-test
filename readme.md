@@ -24,10 +24,11 @@ Beta szoftverrel készült projektet nem fogadunk el.
 
 Ezeket fogjuk nézni első sorban:
 * Fordul-e az app :)
-* _Androidon_: legalább 3 screen
+* Legalább 3 screen
 * Képernyőméretek figyelembe vétele
 * Meglévő nyílt forrású libek használata
 * Clean kód és projekt felépítés, architektúra, esztétika
+* iOS-en a minimum az iOS 12 és légyszi ne használj RxSwiftet
 * Plusz pont a dependency injection-ért
 * Plusz pont a Unit tesztekért és/vagy UI tesztekért
 
