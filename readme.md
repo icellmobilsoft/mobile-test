@@ -1,5 +1,12 @@
 # Mobil - Fejlesztői teszt
 
+## Az első lépés
+
+Mielőtt elkezdenéd a feladat megoldását, töltsd ki az alábbi tesztet:   
+https://assessment.testgorilla.com/testtaker/publicinvitation/b13dee2a-3efd-4455-ac4e-9a270fa2fb16
+
+## A tesztfeladat
+
 **Swift-ben vagy Kotlin-ban írd meg!**
 
 Arra vagyunk kíváncsiak, hogy milyen szép kódot írsz!  
@@ -9,7 +16,7 @@ Gondolj arra, hogy ez egy production alkalmazás, tartsd szem előtt a továbbfe
 A legfrissebb **stable** Android Studio-t vagy Xcode-ot használd.   
 Beta szoftverrel készült projektet nem fogadunk el.
 
-## Példa nyílt API-k
+### Példa nyílt API-k
 
 | Oldal | URL |
 | :- | :- |
@@ -32,7 +39,7 @@ Elsősorban ezeket fogjuk nézni:
 * Plusz pont a dependency injection-ért
 * Plusz pont a Unit tesztekért és/vagy UI tesztekért
 
-## Beadás
+### Beadás
 
 Feladhatsz egy PR-t ide, csinálhatsz egy ingyenes privát repót a [GitLab](https://www.gitlab.com)-on, a [Bitbucket](https://bitbucket.org)-on, vagy csak küldd el e-mailben.  
 Ahogy tetszik.
