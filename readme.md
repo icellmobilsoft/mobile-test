@@ -33,12 +33,12 @@ Beta szoftverrel készült projektet nem fogadunk el.
 Elsősorban ezeket fogjuk nézni:
 * Fordul-e az app :)
 * Legalább 3 screen
-* Képernyőméretek figyelembe vétele
+* Képernyőméretek figyelembevétele
+* Dependency Injection használata
 * Meglévő nyílt forrású libek használata
 * Clean kód és projekt felépítés, architektúra, esztétika
 * iOS-en a minimum az iOS 12 és légyszi ne használj RxSwiftet
 * Android esetében az alkalmazás legyen reaktív és moduláris, használj composet és coroutineokat
-* Plusz pont a dependency injection-ért
 * Plusz pont a Unit tesztekért és/vagy UI tesztekért
 
 ### Beadás
